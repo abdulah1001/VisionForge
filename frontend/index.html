@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-theme="carbon">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090B10" />
+    <script>
+      (() => {
+        const saved = localStorage.getItem("visionforge-theme");
+        const theme =
+          saved === "carbon" || saved === "porcelain"
+            ? saved
+            : matchMedia("(prefers-color-scheme: light)").matches
+              ? "porcelain"
+              : "carbon";
+        document.documentElement.dataset.theme = theme;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.content = theme === "carbon" ? "#090B10" : "#F3EFE7";
+      })();
+    </script>
+    <title>VisionForge - Local Visual Intelligence Studio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg
+
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# Caches (must stay on D:, never commit)
+caches/
+D:/caches/
+
+# Hugging Face / model weights / local model packs
+.cache/
+huggingface/
+**/huggingface/hub/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+*.engine
+checkpoints/
+weights/
+models/
+models/weights/
+.venvs/
+*.crdownload
+
+# External model source clones
+model_sources/
+
+# Media / artifacts
+artifacts/
+test-outputs/
+test_outputs/
+outputs/
+input_videos/
+videos/
+*.mp4
+*.avi
+*.mov
+*.mkv
+masks/
+overlays/
+tmp/
+temp/
+*.jpg
+*.jpeg
+*.png
+!visionforge/**/*.png
+!frontend/public/**
+
+# Frontend build and test output
+frontend/node_modules/
+frontend/dist/
+frontend/playwright-report/
+frontend/test-results/
+frontend/e2e-output/
+
+# Media probe sessions / temp decode
+artifacts/media_previews/
+**/media_previews/
+
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Upstream clones (external dependency location)
+external/
+.sam3_src/
+
+frontend/e2e-output/
+frontend/test-results/
+

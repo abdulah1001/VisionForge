@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visionforge"
+version = "0.1.0"
+description = "VisionForge — local AI video object remover (track + ProPainter inpaint)"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.26",
+    "pillow>=10.0",
+    "huggingface_hub>=0.24",
+    "typing_extensions>=4.10",
+    "pydantic>=2.7",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "httpx>=0.27",
+]
+sam31 = [
+    "torch>=2.7",
+    "torchvision",
+    "opencv-python-headless>=4.8",
+]
+api = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9",
+    "pydantic>=2.7",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+visionforge-remove = "visionforge.cli.remove_object:main"
+visionforge-api = "visionforge.api.server:main"
+visionforge-e2e = "visionforge.cli.e2e_pipeline:main"
+visionforge-sam31-smoke = "visionforge.cli.sam31_smoke_test:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["visionforge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: real model / GPU tests (opt-in)",
+]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]

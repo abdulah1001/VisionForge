@@ -1,0 +1,2 @@
+import type { SVGProps } from "react";
+export function VisionForgeMark(props:SVGProps<SVGSVGElement>){return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" {...props}><circle cx="24" cy="24" r="19" stroke="currentColor" strokeWidth="2"/><path d="M24 5l7 10-3 6-12-1-5-9M43 24l-11 6-6-4 2-12 9-4M24 43l-7-10 3-6 12 1 5 9M5 24l11-6 6 4-2 12-9 4" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M10 35c7-9 15-12 28-12" stroke="var(--tracking)" strokeWidth="2" strokeLinecap="round"/><circle cx="38" cy="23" r="2.5" fill="var(--tracking)"/></svg>}
