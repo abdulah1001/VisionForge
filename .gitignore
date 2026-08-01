@@ -66,6 +66,7 @@ temp/
 *.png
 !visionforge/**/*.png
 !frontend/public/**
+!docs/images/**
 
 # Frontend build and test output
 frontend/node_modules/

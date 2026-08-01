@@ -10,6 +10,10 @@ The product goal is practical local use on consumer NVIDIA hardware (about 8GB V
 Upload → Analyze objects → Select target → Remove → Preview / Download
 ```
 
+<p align="center">
+  <img src="docs/images/studio-before-after.jpg" alt="VisionForge Studio before and after object removal" width="900" />
+</p>
+
 ---
 
 ## Why this exists
@@ -22,6 +26,10 @@ Most object-removal demos either ship as notebooks, require cloud GPUs, or hide 
 4. Explicit limits and recovery when VRAM runs out, instead of a silent blank result
 
 Footage stays on disk under local artifact paths. The API binds to `127.0.0.1` by default.
+
+<p align="center">
+  <img src="docs/images/process-workflow.jpg" alt="Upload, detect, select, track, rebuild, clean video — local and private" width="900" />
+</p>
 
 ---
 
@@ -44,6 +52,10 @@ Footage stays on disk under local artifact paths. The API binds to `127.0.0.1` b
 | Mask prep | Dilated masks for inpaint stability |
 | Inpaint | ProPainter in an **isolated** venv/cache (does not mutate the main smoke env) |
 | Encode | Frame sequence → H.264; audio copied/muxed when the source has an audio stream |
+
+<p align="center">
+  <img src="docs/images/pipeline-overview.jpg" alt="End-to-end pipeline from video input through tracking to cleaned output" width="900" />
+</p>
 
 ### Engineering for 8GB-class GPUs
 
